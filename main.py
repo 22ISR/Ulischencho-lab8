@@ -6,6 +6,14 @@ monthly_spending = [2689.56, 2770.38, 2394.04, 2099.91, 3182.20, 3267.12, 1746.8
 ```  
 Напишите программу, которая с помощью цикла `for` вычисляет средние расходы Джона за первый семестр (январь–июнь) и второй семестр (июль–декабрь).  
 
+
+monthly_spending = [2689.56, 2770.38, 2394.04, 2099.91, 3182.20, 3267.12, 1746.83, 2545.72, 3328.20, 3147.30, 2462.61, 3890.45]
+first_semester = monthly_spending[:6]
+second_semester = monthly_spending[6:]
+avg_one = sum(one_semester) / len(one_semester)
+avg_two = sum(two_semester) / len(two_semester)
+print("Первый: ", avg_one)
+print("Второй: ", avg_two)
 ---
 
 ### Задача 2: Кто тратил больше?  
@@ -15,6 +23,9 @@ john_monthly_spending = [2689.56, 2770.38, 2394.04, 2099.91, 3182.20, 3267.12, 1
 sam_monthly_spending = [1969.62, 3939.37, 2241.59, 3968.27, 3068.80, 1755.02, 3885.66, 2491.67, 3828.49, 3171.32, 2771.32, 3380.37]
 ```  
 Напишите программу, которая сравнивает расходы Джона и Сэма по месяцам и подсчитывает количество месяцев, в которых Джон тратил больше.  
+john_monthly_spending = [2689.56, 2770.38, 2394.04, 2099.91, 3182.20, 3267.12, 1746.83, 2545.72, 3328.20, 3147.30, 2462.61, 3890.45]  
+sam_monthly_spending = [1969.62, 3939.37, 2241.59, 3968.27, 3068.80, 1755.02, 3885.66, 2491.67, 3828.49, 3171.32, 2771.32, 3380.37]
+print(sum(john_monthly_spending > sam_monthly_spending for john_monthly_spending, sam_monthly_spending in zip(john_monthly_spending, sam_monthly_spending)))
 
 ---
 
@@ -23,14 +34,22 @@ sam_monthly_spending = [1969.62, 3939.37, 2241.59, 3968.27, 3068.80, 1755.02, 38
 ```python
 paul_friends = ["Mary", "Tim", "Mike", "Henry"]  
 tina_friends = ["Tim", "Susan", "Mary", "Josh"]
-```  
+first_list = ["Mary", "Tim", "Mike", "Henry"]
+second_list = ["Tim", "Susan", "Mary", "Josh"]
+in_first = set(first_list)
+in_second = set(second_list)
+in_second_but_not_in_first = in_second - in_first
+result = first_list + list(in_second_but_not_in_first)
+print(result)
 Объедините оба списка в один, исключив дублирующиеся имена.  
 
 ---
 
 ### Задача 4: Общие друзья  
 Используя те же списки друзей Пола и Тины, напишите программу, которая с помощью цикла находит их общих друзей.  
-
+paul_friends = ["Mary", "Tim", "Mike", "Henry"]  
+tina_friends = ["Tim", "Susan", "Mary", "Josh"]
+print(set(paul_friends + tina_friends))
 ---
 
 ### Задача 5: Игроки в баскетбол  
@@ -41,7 +60,7 @@ volleyball_players = {"Jack", "Hugh", "Peter", "Sam"}
 basketball_players = {"Eve", "Richard", "Jessica", "Sam", "Michael"}
 ```  
 Напишите программу, которая определяет игроков, зарегистрированных только в баскетболе (не в футболе и не в волейболе).  
-
+print("Игроки в баскетболе:", only_basketball_players)
 ---
 
 ### Задача 6: Подсчёт голосов  
